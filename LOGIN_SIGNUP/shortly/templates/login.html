@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+
+    <link
+      href="https://demo.gempixel.com/short/static/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://demo.gempixel.com/short/themes/cleanex/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://demo.gempixel.com/short/static/css/components.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://demo.gempixel.com/short/static/css/fa-all.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://demo.gempixel.com/short/static/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://demo.gempixel.com/short/static/application.fn.js"
+    ></script>
+    <script type="text/javascript">
+      var appurl = "https://demo.gempixel.com/short";
+      var token = "56199e6bc5cf705ca1c86f3b616ead97";
+    </script>
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js?v=1.1.0"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.1/icheck.min.js?v=1.0.1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.15/clipboard.min.js?v=1.5.15"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js?v=3.0.3"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css?v=3.0.3"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.10/jquery.autocomplete.min.js?v=1.1.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/pace/0.4.17/pace.js?v=0.4.17"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+    <style type="text/css">
+      body {
+        font-family: "Open Sans" !important;
+      }
+    </style>
+    <script type="text/javascript">
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-37726302-3", "auto");
+      ga("send", "pageview");
+    </script>
+    <style>
+      .run-demo {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+      }
+      .run-demo a {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+        text-align: left;
+        padding-right: 15px;
+      }
+      .run-demo a span {
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+        opacity: 0.8;
+      }
+      .run-demo a h3 {
+        display: inline-block;
+        font-size: 15px;
+        margin: 0;
+        line-height: 25px;
+        margin-left: 10px;
+      }
+      .run-demo a i.child {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        font-size: 10px;
+        opacity: 0.5;
+      }
+      .run-demo a i {
+        font-size: 35px;
+        padding: 0 10px;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://demo.gempixel.com/short/static/application.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://demo.gempixel.com/short/static/server.js"
+    ></script>
+  </head>
+  <body id="body">
+    <a href="#body" id="back-to-top"
+      ><i class="glyphicon glyphicon-chevron-up"></i
+    ></a>
+    <section>
+      <div class="container">
+        <div class="centered form">
+          <div class="site_logo"></div>
+          <form
+            role="form"
+            class="live_form form"
+            id="login_form"
+            method="post"
+            action=""
+          >
+            {% csrf_token %}
+            <div class="social">
+              <h2 style="text-align: center">Login to your account</h2>
+            </div>
+            <div class="form-group">
+              <label for="email"
+                >Email or username
+                <a href="{% url 'register' %}" class="pull-right"
+                  >(Create account)</a
+                >
+              </label>
+              {{ form.username }}
+            </div>
+            <div class="form-group">
+              <label for="pass"
+                >Password
+                <a href="/forget" class="pull-right" id="forgot-password"
+                  >(Forgot Password)</a
+                ></label
+              >
+              {{ form.password }}
+            </div>
+            <p></p>
+            <div class="form-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="rememberme"
+                  value="1"
+                  data-class="blue"
+                />
+                <span class="check-box">Remember me</span>
+              </label>
+            </div>
+            <input type="hidden" />
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
